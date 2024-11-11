@@ -1,0 +1,152 @@
+// 1.
+var nota;
+do {
+  nota = parseFloat(prompt("Digite uma nota entre 0 e 10:"));
+  if (nota < 0 || nota > 10) {
+    console.log("Nota inválida! Tente novamente.");
+  }
+} while (nota < 0 || nota > 10);
+console.log("Nota válida:", nota);
+
+// 2.
+for (var i = 1; i <= 100; i++) {
+  console.log(i);
+}
+
+// 3. 
+var usuario, senha;
+do {
+  usuario = prompt("Digite seu nome de usuário:");
+  senha = prompt("Digite sua senha:");
+  if (senha === usuario) {
+    console.log("Erro: A senha não pode ser igual ao nome de usuário.");
+  }
+} while (senha === usuario);
+console.log("Usuário e senha aceitos.");
+
+// 4.
+var nome, idade, salario, sexo, estadoCivil;
+
+do {
+  nome = prompt("Digite seu nome:");
+  if (nome.length <= 3) console.log("Erro: O nome deve ter mais de 3 caracteres.");
+} while (nome.length <= 3);
+
+do {
+  idade = parseInt(prompt("Digite sua idade:"));
+  if (idade < 0 || idade > 150) console.log("Erro: A idade deve estar entre 0 e 150.");
+} while (idade < 0 || idade > 150);
+
+do {
+  salario = parseFloat(prompt("Digite seu salário:"));
+  if (salario <= 0) console.log("Erro: O salário deve ser maior que zero.");
+} while (salario <= 0);
+
+do {
+  sexo = prompt("Digite seu sexo (f ou m):").toLowerCase();
+  if (sexo !== 'f' && sexo !== 'm') console.log("Erro: O sexo deve ser 'f' ou 'm'.");
+} while (sexo !== 'f' && sexo !== 'm');
+
+do {
+  estadoCivil = prompt("Digite seu estado civil (s, c, v, d):").toLowerCase();
+  if (!['s', 'c', 'v', 'd'].includes(estadoCivil)) console.log("Erro: Estado civil inválido.");
+} while (!['s', 'c', 'v', 'd'].includes(estadoCivil));
+
+console.log("Informações válidas!");
+
+// 5. 
+var populacaoA = 80000;
+var populacaoB = 200000;
+var taxaCrescimentoA = 0.03;
+var taxaCrescimentoB = 0.015;
+var anos = 0;
+
+while (populacaoA <= populacaoB) {
+  populacaoA += populacaoA * taxaCrescimentoA;
+  populacaoB += populacaoB * taxaCrescimentoB;
+  anos++;
+}
+
+console.log("Serão necessários", anos, "anos para que a população A ultrapasse a população B.");
+
+// 6.
+do {
+  var populacaoA = parseFloat(prompt("Digite a população do país A:"));
+  var populacaoB = parseFloat(prompt("Digite a população do país B:"));
+  var taxaCrescimentoA = parseFloat(prompt("Digite a taxa de crescimento anual de A (%):")) / 100;
+  var taxaCrescimentoB = parseFloat(prompt("Digite a taxa de crescimento anual de B (%):")) / 100;
+
+  if (populacaoA > 0 && populacaoB > 0 && taxaCrescimentoA > 0 && taxaCrescimentoB > 0) {
+    var anos = 0;
+    while (populacaoA <= populacaoB) {
+      populacaoA += populacaoA * taxaCrescimentoA;
+      populacaoB += populacaoB * taxaCrescimentoB;
+      anos++;
+    }
+    console.log("Serão necessários", anos, "anos para que a população A ultrapasse a população B.");
+  } else {
+    console.log("Erro: Todos os valores devem ser positivos.");
+  }
+} while (!confirm("Deseja sair?"));
+
+// 7. 
+for (var i = 1; i <= 20; i++) {
+  console.log(i);  // Um abaixo do outro
+}
+
+var output = "";
+for (var i = 1; i <= 20; i++) {
+  output += i + " ";
+}
+console.log(output.trim());  // Lado a lado
+
+// 8. 
+var maior = Number.NEGATIVE_INFINITY;
+for (var i = 0; i < 5; i++) {
+  var numero = parseFloat(prompt("Digite um número:"));
+  if (numero > maior) {
+    maior = numero;
+  }
+}
+console.log("O maior número é:", maior);
+
+// 9.
+var soma = 0;
+for (var i = 0; i < 5; i++) {
+  var numero = parseFloat(prompt("Digite um número:"));
+  soma += numero;
+}
+var media = soma / 5;
+console.log("A soma é:", soma);
+console.log("A média é:", media);
+
+// 10. 
+for (var i = 1; i <= 50; i += 2) {
+  console.log(i);
+}
+
+// 11. 
+var num1 = parseInt(prompt("Digite o primeiro número:"));
+var num2 = parseInt(prompt("Digite o segundo número:"));
+
+var menor = Math.min(num1, num2);
+var maior = Math.max(num1, num2);
+
+for (var i = menor + 1; i < maior; i++) {
+  console.log(i);
+}
+
+// 12. 
+var num1 = parseInt(prompt("Digite o primeiro número:"));
+var num2 = parseInt(prompt("Digite o segundo número:"));
+
+var menor = Math.min(num1, num2);
+var maior = Math.max(num1, num2);
+var soma = 0;
+
+for (var i = menor + 1; i < maior; i++) {
+  console.log(i);
+  soma += i;
+}
+
+console.log("A soma dos números no intervalo é:", soma);
